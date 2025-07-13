@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #2e3439, #30373d);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 4pc;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header h2 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: #f0f0f0;
+    }
+
+    section {
+      padding: 3rem 2rem;
+    }
+
+    .about {
+      background-color: #ffffff;
+      max-width: 900px;
+      margin: auto;
+      padding: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .about h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
+
+    .about p {
+      text-align: justify;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .hobby {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hobby h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .info-sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .info-sections>div {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 340px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .info-sections>div:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-sections h3 {
+      text-align: center;
+      color: #3a3a3a;
+      margin-bottom: 1rem;
+    }
+
+    .info-sections ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .info-sections li {
+      font-size: 1.05rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #eee;
+      color: #555;
+    }
+
+    footer {
+      background: #131722;
+      color: #eee;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #66a6ff;
+      text-decoration: none;
+      margin: 0 4px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .social-links {
+      margin: 0.5rem 0;
+    }
+
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .about,
+      .hobby {
+        padding: 1.5rem;
+      }
+
+      .info-sections>div {
+        width: 100%;
+      }
+    }
+  </style>
+  <title>Yash Bhatti | Portfolio</title>
+</head>
+
+<body>
+  <header>
+    <h1>Yash Bhatti</h1>
+    <h2>Aspiring Web Developer</h2>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Yash Bhatti — I’m a computer engineering student genuinely interested in web development, especially the
+      MERN stack. Right now, I’m focusing on building a strong foundation in JavaScript and exploring how things work by
+      practicing and building small projects.
+    </p>
+    <p>
+      I believe in learning by doing, and while I’m still early in my journey, I enjoy solving problems and improving
+      step by step. My goal is to grow into a confident full-stack developer by gaining practical experience and
+      continuously learning.
+    </p>
+  </section>
+
+  <section class="hobby">
+    <h2>Skills, Goals & Hobbies</h2>
+    <div class="info-sections">
+      <div>
+        <h3>Skills</h3>
+        <ul>
+          <li>HTML, CSS, and JavaScript (Core Web Skills)</li>
+          <li>ReactJS for building interactive UIs</li>
+          <li>Creative Problem Solving</li>
+          <li>Responsive Web Design</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Goals</h3>
+        <ul>
+          <li>Become a Full-Stack Web Developer</li>
+          <li>Contribute to Open Source Projects</li>
+          <li>Work at a top tech company</li>
+          <li>Master AI and integrate it with web apps</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Hobbies</h3>
+        <ul>
+          <li>Writing song lyrics</li>
+          <li>Playing cricket and team sports</li>
+          <li>Designing web UI mockups</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    <footer>
+      <p>&copy; 2025 Yash Bhatti. All rights reserved. | Designed with ❤️ by Yash</p>
+      <p>Email: <a href="mailto:yashbhattti@example.com">yashbhattti@example.com</a></p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/imyashbhatti" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/BhattiYash" target="_blank">GitHub</a>
+      </div>
+      <p>Last updated: June 2025</p>
+    </footer>
+</body>
+</html>
