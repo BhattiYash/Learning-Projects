@@ -1,21 +1,5 @@
-// import './App.css'
-// // import Home from './screens/Home'
-// import SpotifyHome from './spotifyTrial/SpotifyHome'
-
-// function App() {
-//   return (
-//     <>
-//     <div className='h-screen bg-gray-200'>
-//      {/* <Home /> */}
-//      <SpotifyHome />
-//     </div>
-//     </>
-//   )
-// }
-// export default App
-
-
 import React, { useEffect, useState } from 'react';
+import './App.css'
 
 // --- CONFIGURATION ---
 const clientId = 'c54b4942fcd549d899d529ba7baf6d0e'; // Replace with your Client ID
