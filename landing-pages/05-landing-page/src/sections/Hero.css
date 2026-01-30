@@ -1,0 +1,548 @@
+/* ============================================
+   HERO SECTION STYLES - WITH CAROUSEL
+   ============================================ */
+
+.hero {
+    /* Full viewport height */
+    min-height: 100vh;
+
+    /* Positioning for background layers */
+    position: relative;
+    overflow: hidden;
+
+    /* Flexbox centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Padding to account for navbar */
+    padding-top: 80px;
+}
+
+/* ============================================
+   BACKGROUND LAYERS - Parallax Effect
+   ============================================ */
+.hero__background {
+    /* Absolute positioning to cover entire section */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Gradient orbs for background - creates depth */
+.hero__bg-gradient {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+}
+
+.hero__bg-gradient--1 {
+    /* Primary gradient orb - cyan */
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    top: -200px;
+    right: -100px;
+}
+
+.hero__bg-gradient--2 {
+    /* Secondary gradient orb - purple */
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+    bottom: -150px;
+    left: -100px;
+}
+
+/* ============================================
+   FLOATING PARTICLES - Animated Background
+   ============================================ */
+.hero__particles {
+    /* Container for particles */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.hero__particle {
+    /* Individual particle styling */
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* ============================================
+   CONTENT SECTION
+   ============================================ */
+.hero__content {
+    /* Positioning above background */
+    position: relative;
+    z-index: 1;
+
+    /* Full width */
+    width: 100%;
+    max-width: 1400px;
+    padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+/* ============================================
+   CAROUSEL CONTAINER
+   ============================================ */
+.hero__carousel {
+    /* Carousel wrapper */
+    position: relative;
+    width: 100%;
+}
+
+.hero__slide {
+    /* Slide layout - two columns */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+    min-height: 500px;
+}
+
+/* ============================================
+   TEXT CONTENT (Left Side)
+   ============================================ */
+.hero__text-content {
+    /* Text content container */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* ============================================
+   BADGE - Top announcement
+   ============================================ */
+.hero__badge {
+    /* Inline badge with glassmorphism */
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+
+    /* Glassmorphism styling */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+
+    /* Padding */
+    padding: var(--spacing-xs) var(--spacing-md);
+
+    /* Margin */
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero__badge-text {
+    /* Text styling */
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   TITLE - Main Heading
+   ============================================ */
+.hero__title {
+    /* Typography */
+    font-size: var(--fs-6xl);
+    font-weight: 900;
+    line-height: 1.1;
+
+    /* Spacing */
+    margin-bottom: var(--spacing-lg);
+
+    /* Default gradient from global styles */
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero__title-highlight {
+    /* Highlighted text with neon gradient */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Subtle glow effect */
+    filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.3));
+}
+
+/* ============================================
+   SUBTITLE
+   ============================================ */
+.hero__subtitle {
+    /* Typography */
+    font-size: var(--fs-lg);
+    line-height: 1.7;
+    color: var(--text-secondary);
+
+    /* Max width for readability */
+    max-width: 600px;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
+.hero__cta {
+    /* Flexbox layout */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.hero__cta-primary,
+.hero__cta-secondary {
+    /* Button layout */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+
+    /* Typography */
+    font-size: var(--fs-base);
+    font-weight: 600;
+}
+
+.hero__cta-icon {
+    /* Icon size */
+    font-size: var(--fs-xl);
+}
+
+/* ============================================
+   GIF CONTAINER (Right Side)
+   ============================================ */
+.hero__gif-container {
+    /* GIF container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__gif-wrapper {
+    /* Glass wrapper for GIF */
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    padding: var(--spacing-md);
+
+    /* Enhanced glassmorphism */
+    background: var(--glass-bg-hover);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-lg), var(--shadow-glow-primary);
+}
+
+.hero__gif {
+    /* GIF image styling */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+}
+
+/* ============================================
+   CAROUSEL CONTROLS
+   ============================================ */
+.hero__carousel-controls {
+    /* Controls container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.hero__carousel-btn {
+    /* Navigation button */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Glassmorphism */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+
+    /* Icon styling */
+    color: var(--text-primary);
+    font-size: var(--fs-2xl);
+
+    /* Interaction */
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.hero__carousel-btn:hover {
+    /* Hover effect */
+    background: var(--glass-bg-hover);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+/* ============================================
+   CAROUSEL DOTS
+   ============================================ */
+.hero__carousel-dots {
+    /* Dots container */
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.hero__carousel-dot {
+    /* Individual dot */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--glass-border);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: 0;
+}
+
+.hero__carousel-dot:hover {
+    background: var(--text-secondary);
+}
+
+.hero__carousel-dot--active {
+    /* Active dot */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    box-shadow: 0 0 10px var(--primary-color);
+    width: 30px;
+    border-radius: var(--radius-full);
+}
+
+/* ============================================
+   STATS PREVIEW
+   ============================================ */
+.hero__stats {
+    /* Flexbox layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+
+    /* Glassmorphism container */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+
+    /* Padding */
+    padding: var(--spacing-lg) var(--spacing-xl);
+
+    /* Max width */
+    max-width: fit-content;
+    margin: var(--spacing-3xl) auto 0;
+}
+
+.hero__stat {
+    /* Individual stat styling */
+    text-align: center;
+}
+
+.hero__stat-value {
+    /* Value typography */
+    font-family: var(--font-heading);
+    font-size: var(--fs-3xl);
+    font-weight: 900;
+
+    /* Gradient text */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Spacing */
+    margin-bottom: var(--spacing-xs);
+}
+
+.hero__stat-label {
+    /* Label typography */
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+}
+
+.hero__stat-divider {
+    /* Vertical divider between stats */
+    width: 1px;
+    height: 40px;
+    background: var(--glass-border);
+}
+
+/* ============================================
+   SCROLL INDICATOR
+   ============================================ */
+.hero__scroll-indicator {
+    /* Positioning at bottom center */
+    position: absolute;
+    bottom: var(--spacing-2xl);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.hero__scroll-mouse {
+    /* Mouse icon styling */
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-full);
+    position: relative;
+
+    /* Glow effect */
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.hero__scroll-mouse::before {
+    /* Scroll wheel indicator */
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero__slide {
+        gap: var(--spacing-2xl);
+    }
+
+    .hero__title {
+        font-size: var(--fs-5xl);
+    }
+
+    .hero__subtitle {
+        font-size: var(--fs-base);
+    }
+
+    .hero__gif-wrapper {
+        max-width: 400px;
+    }
+
+    .hero__bg-gradient--1,
+    .hero__bg-gradient--2 {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100svh;
+        padding-top: 60px;
+    }
+
+    .hero__slide {
+        /* Stack vertically on mobile */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        min-height: auto;
+    }
+
+    .hero__text-content {
+        /* Center text on mobile */
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .hero__subtitle {
+        font-size: var(--fs-base);
+        max-width: 100%;
+    }
+
+    .hero__cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero__cta-primary,
+    .hero__cta-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero__gif-wrapper {
+        max-width: 100%;
+    }
+
+    .hero__carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-xl);
+    }
+
+    .hero__stats {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-2xl);
+    }
+
+    .hero__stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .hero__bg-gradient--1,
+    .hero__bg-gradient--2 {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: var(--fs-3xl);
+    }
+
+    .hero__badge-text {
+        font-size: var(--fs-xs);
+    }
+
+    .hero__carousel-controls {
+        gap: var(--spacing-md);
+    }
+}

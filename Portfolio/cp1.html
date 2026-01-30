@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Bhatti – Web Developer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <style>
+    :root{
+      --bg:#0f1116;
+      --glass:rgba(255,255,255,0.08);
+      --text:#fff;
+      --accent:#6e7bff;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{
+      font-family:Poppins, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    nav{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      padding:1.2rem 3rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.15);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      z-index:1000;
+    }
+    nav a{
+      color:var(--text);
+      margin:0 1rem;
+      font-weight:500;
+      text-decoration:none;
+    }
+    nav a:hover{color:var(--accent)}
+    
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      text-align:center;
+      padding:2rem;
+      background:radial-gradient(circle at top, #202637, #0f1116);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero h1{
+      font-size:4rem;
+      animation:fadeSlide 1.5s ease;
+    }
+    .hero h3{
+      opacity:0.8;
+      margin-top:0.6rem;
+    }
+    @keyframes fadeSlide{
+      0%{opacity:0; transform:translateY(20px);}
+      100%{opacity:1; transform:translateY(0);}
+    }
+    .hero button{
+      margin-top:2rem;
+      padding:1rem 2rem;
+      border:none;
+      background:var(--accent);
+      color:var(--text);
+      border-radius:50px;
+      cursor:pointer;
+      font-weight:600;
+      transition:.3s;
+    }
+    .hero button:hover{
+      transform:scale(1.08);
+      background:#8691ff;
+    }
+
+    section{
+      padding:6rem 2rem;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:2.8rem;
+      margin-bottom:3rem;
+    }
+
+    .about p{
+      font-size:1.3rem;
+      line-height:1.9;
+      opacity:0.9;
+    }
+
+    .grid{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:2rem;
+    }
+    .card{
+      width:320px;
+      padding:2rem;
+      border-radius:18px;
+      background:var(--glass);
+      backdrop-filter:blur(14px);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 30px rgba(0,0,0,0.3);
+      transition:.35s;
+    }
+    .card:hover{
+      transform:translateY(-10px) scale(1.03);
+      border-color:var(--accent);
+    }
+    .card h3{
+      font-size:1.5rem;
+      margin-bottom:1rem;
+    }
+    .card ul li{
+      list-style:none;
+      line-height:1.7;
+      opacity:0.85;
+      font-size:1.05rem;
+      padding:4px 0;
+    }
+
+    footer{
+      text-align:center;
+      padding:2.5rem;
+      opacity:0.7;
+      font-size:1rem;
+    }
+    footer a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Yash.dev</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#goals">Goals</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Hi, I'm <span style="color:#7c87ff;">Yash Bhatti</span></h1>
+    <h3>Aspiring Web Developer | MERN Learner</h3>
+    <button onclick="location.href='#contact'">Connect With Me</button>
+  </div>
+
+  <section id="about" class="about" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I'm a Computer Engineering student passionate about Web Development.  
+      I believe in learning through building small projects, improving step by step,  
+      and strengthening my JavaScript & MERN foundations.  
+      My goal is to grow into a confident full-stack developer who can build real products.
+    </p>
+  </section>
+
+  <section id="skills" data-aos="fade-up">
+    <h2 class="section-title">Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Web Tech</h3>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>ReactJS Basics</li>
+          <li>Responsive Web Design</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Mindset</h3>
+        <ul>
+          <li>Problem Solving</li>
+          <li>Learning by Doing</li>
+          <li>Curious & Consistent</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="goals" data-aos="fade-up">
+    <h2 class="section-title">Goals</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Career & Tech</h3>
+        <ul>
+          <li>Become Full-Stack Developer</li>
+          <li>Contribute to Open Source</li>
+          <li>Work in a top tech company</li>
+          <li>Integrate AI with Web Apps</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Personal</h3>
+        <ul>
+          <li>Write more songs</li>
+          <li>Play cricket</li>
+          <li>Design UI mockups</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2 class="section-title">Contact</h2>
+    <p style="text-align:center; font-size:1.3rem;">
+      Email: <a href="mailto:replace@email.com">replace@email.com</a><br><br>
+      <a href="https://www.linkedin.com/in/imyashbhatti" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/BhattiYash" target="_blank">GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Yash Bhatti. Designed with ❤️
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({duration:1000})</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* ============================================
+   GLASS CARD COMPONENT STYLES
+   ============================================ */
+
+.glass-card {
+    /* Glassmorphism effect - semi-transparent background with blur */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+
+    /* Border and shadows */
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+
+    /* Padding for content */
+    padding: var(--spacing-lg);
+
+    /* Smooth transitions */
+    transition: all var(--transition-base);
+}
+
+/* Hover effect - brightens the glass and adds glow */
+.glass-card--hover:hover {
+    background: var(--glass-bg-hover);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow-primary);
+}
+
+/* Strong glass variant - more opaque and stronger blur */
+.glass-card--strong {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Mobile - reduce padding */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: var(--spacing-md);
+    }
+}

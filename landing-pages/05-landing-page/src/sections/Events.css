@@ -1,0 +1,148 @@
+/* ============================================
+   EVENTS SECTION STYLES
+   ============================================ */
+
+.events {
+    background: var(--bg-dark);
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.events__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.events__title {
+    font-size: var(--fs-5xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.events__subtitle {
+    font-size: var(--fs-xl);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   EVENTS GRID
+   ============================================ */
+.events__grid {
+    /* Grid layout - 2 columns on desktop */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+}
+
+/* ============================================
+   EVENT CARD
+   ============================================ */
+.events__card {
+    /* Card layout */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    position: relative;
+    padding: var(--spacing-xl);
+}
+
+.events__tag {
+    /* Event tag badge */
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+
+    /* Styling */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-dark);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.events__card-title {
+    /* Event title */
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-top: var(--spacing-lg);
+}
+
+/* ============================================
+   EVENT INFO
+   ============================================ */
+.events__info {
+    /* Info container */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.events__info-item {
+    /* Individual info item */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+}
+
+.events__info-icon {
+    /* Icon styling */
+    color: var(--primary-color);
+    font-size: var(--fs-lg);
+}
+
+.events__description {
+    /* Event description */
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.events__cta {
+    /* CTA button */
+    margin-top: var(--spacing-md);
+    width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .events__grid {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .events__grid {
+        /* Single column on mobile */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .events__header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .events__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .events__subtitle {
+        font-size: var(--fs-lg);
+    }
+
+    .events__card-title {
+        font-size: var(--fs-2xl);
+    }
+}

@@ -1,0 +1,255 @@
+/* ============================================
+   FOOTER COMPONENT STYLES
+   ============================================ */
+
+.footer {
+    /* Background with glassmorphism */
+    background: var(--bg-dark-secondary);
+    border-top: 1px solid var(--glass-border);
+
+    /* Padding */
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+
+    /* Position at bottom */
+    margin-top: auto;
+}
+
+.footer__container {
+    /* Container styling inherited from global */
+    border-color: black;
+}
+
+/* ============================================
+   TOP SECTION
+   ============================================ */
+.footer__top {
+    /* Grid layout for desktop */
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: var(--spacing-3xl);
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* ============================================
+   BRAND COLUMN
+   ============================================ */
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.footer__logo {
+    /* Logo styling */
+    font-family: var(--font-heading);
+    font-size: var(--fs-3xl);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.footer__logo-text {
+    /* Gradient text effect */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer__logo-dot {
+    /* Accent dot with glow */
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.footer__tagline {
+    /* Tagline text */
+    color: var(--text-secondary);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* ============================================
+   SOCIAL LINKS
+   ============================================ */
+.footer__social {
+    /* Flexbox layout */
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.footer__social-link {
+    /* Icon container with glassmorphism */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+}
+
+.footer__social-link:hover {
+    /* Hover effect - gradient background and glow */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-dark);
+    border-color: transparent;
+    box-shadow: var(--shadow-glow-primary);
+}
+
+/* ============================================
+   LINKS GRID
+   ============================================ */
+.footer__links-grid {
+    /* Grid layout for link columns */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.footer__links-column {
+    /* Column styling */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer__links-title {
+    /* Column title */
+    font-family: var(--font-heading);
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer__links-list {
+    /* List styling */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.footer__link {
+    /* Link styling */
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+    transition: color var(--transition-fast);
+}
+
+.footer__link:hover {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   CONTACT INFO
+   ============================================ */
+.footer__contact-list {
+    /* List styling */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer__contact-item {
+    /* Item layout */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--text-secondary);
+    font-size: var(--fs-sm);
+}
+
+.footer__contact-icon {
+    /* Icon styling */
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+/* ============================================
+   BOTTOM SECTION
+   ============================================ */
+.footer__bottom {
+    /* Flexbox layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer__copyright {
+    /* Copyright text */
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+}
+
+.footer__legal {
+    /* Legal links container */
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.footer__legal-link {
+    /* Legal link styling */
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    transition: color var(--transition-fast);
+}
+
+.footer__legal-link:hover {
+    color: var(--primary-color);
+}
+
+.footer__legal-divider {
+    /* Divider between legal links */
+    color: var(--text-muted);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .footer__top {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .footer__links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--spacing-2xl) 0 var(--spacing-md);
+    }
+
+    .footer__links-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__tagline {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,228 @@
+/* ============================================
+   VISION SECTION STYLES
+   ============================================ */
+
+.vision {
+    /* Gradient background */
+    background: linear-gradient(180deg, var(--bg-dark-secondary) 0%, var(--bg-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decoration - large gradient orb */
+.vision::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle,
+            rgba(168, 85, 247, 0.15) 0%,
+            rgba(0, 240, 255, 0.1) 50%,
+            transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ============================================
+   VISION HERO
+   ============================================ */
+.vision__hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto var(--spacing-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.vision__title {
+    /* Large title with gradient */
+    font-size: var(--fs-6xl);
+    font-weight: 900;
+    margin-bottom: var(--spacing-lg);
+
+    /* Gradient text */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vision__statement {
+    /* Vision statement */
+    font-size: var(--fs-xl);
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   VISION GRID
+   ============================================ */
+.vision__grid {
+    /* Grid layout - 4 columns */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.vision__card {
+    /* Card styling */
+    text-align: center;
+    padding: var(--spacing-xl);
+
+    /* Glassmorphism */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+
+    /* Transition */
+    transition: all var(--transition-base);
+}
+
+.vision__card:hover {
+    /* Hover effect */
+    transform: translateY(-8px);
+    background: var(--glass-bg-hover);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.vision__icon-wrapper {
+    /* Icon container */
+    width: 70px;
+    height: 70px;
+    margin: 0 auto var(--spacing-md);
+
+    /* Flexbox centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Gradient background */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.vision__icon {
+    /* Icon styling */
+    font-size: var(--fs-4xl);
+    color: var(--bg-dark);
+}
+
+.vision__card-title {
+    /* Card title */
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.vision__card-description {
+    /* Card description */
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   CALL TO ACTION
+   ============================================ */
+.vision__cta {
+    /* CTA container */
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+
+    /* Glassmorphism */
+    background: var(--glass-bg-hover);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+
+    position: relative;
+    z-index: 1;
+}
+
+.vision__cta-title {
+    /* CTA title */
+    font-size: var(--fs-4xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+
+    /* Gradient text */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vision__cta-text {
+    /* CTA text */
+    font-size: var(--fs-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
+}
+
+.vision__cta-btn {
+    /* CTA button */
+    font-size: var(--fs-lg);
+    padding: var(--spacing-md) var(--spacing-2xl);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .vision__grid {
+        /* 2 columns on tablet */
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .vision__title {
+        font-size: var(--fs-5xl);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .vision__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .vision__statement {
+        font-size: var(--fs-lg);
+    }
+
+    .vision__grid {
+        /* Single column on mobile */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .vision__cta {
+        padding: var(--spacing-xl);
+    }
+
+    .vision__cta-title {
+        font-size: var(--fs-3xl);
+    }
+
+    .vision__cta-text {
+        font-size: var(--fs-base);
+    }
+}

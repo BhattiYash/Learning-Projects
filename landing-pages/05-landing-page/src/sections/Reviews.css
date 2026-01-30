@@ -1,0 +1,251 @@
+/* ============================================
+   REVIEWS SECTION STYLES
+   ============================================ */
+
+.reviews {
+    background: var(--bg-dark-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decoration */
+.reviews::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.reviews__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.reviews__title {
+    font-size: var(--fs-5xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.reviews__subtitle {
+    font-size: var(--fs-xl);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   REVIEW SLIDER
+   ============================================ */
+.reviews__slider {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.reviews__slide {
+    /* Slide container */
+    width: 100%;
+}
+
+.reviews__card {
+    /* Review card styling */
+    padding: var(--spacing-2xl);
+    text-align: center;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ============================================
+   RATING STARS
+   ============================================ */
+.reviews__stars {
+    /* Stars container */
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+}
+
+.reviews__star {
+    /* Star icon */
+    font-size: var(--fs-2xl);
+    color: var(--accent-neon-green);
+    filter: drop-shadow(0 0 5px var(--accent-neon-green));
+}
+
+/* ============================================
+   REVIEW TEXT
+   ============================================ */
+.reviews__text {
+    /* Review quote */
+    font-size: var(--fs-xl);
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-style: italic;
+    margin-bottom: var(--spacing-xl);
+    flex-grow: 1;
+}
+
+/* ============================================
+   REVIEWER INFO
+   ============================================ */
+.reviews__author {
+    /* Author container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: auto;
+}
+
+.reviews__avatar {
+    /* Avatar circle */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-3xl);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.reviews__author-info {
+    /* Author text info */
+    text-align: left;
+}
+
+.reviews__author-name {
+    /* Name */
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.reviews__author-position {
+    /* Position */
+    font-size: var(--fs-sm);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   SLIDER CONTROLS
+   ============================================ */
+.reviews__controls {
+    /* Controls container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-2xl);
+}
+
+.reviews__control-btn {
+    /* Navigation button */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-2xl);
+    border-radius: 50%;
+}
+
+/* ============================================
+   DOTS INDICATOR
+   ============================================ */
+.reviews__dots {
+    /* Dots container */
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.reviews__dot {
+    /* Individual dot */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--glass-border);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: 0;
+}
+
+.reviews__dot:hover {
+    background: var(--text-secondary);
+}
+
+.reviews__dot--active {
+    /* Active dot */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    box-shadow: 0 0 10px var(--primary-color);
+    width: 30px;
+    border-radius: var(--radius-full);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .reviews__card {
+        min-height: 400px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .reviews__header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .reviews__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .reviews__subtitle {
+        font-size: var(--fs-lg);
+    }
+
+    .reviews__card {
+        padding: var(--spacing-xl);
+        min-height: auto;
+    }
+
+    .reviews__text {
+        font-size: var(--fs-lg);
+    }
+
+    .reviews__author {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reviews__author-info {
+        text-align: center;
+    }
+
+    .reviews__control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-xl);
+    }
+}

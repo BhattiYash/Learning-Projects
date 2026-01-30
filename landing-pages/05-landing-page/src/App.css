@@ -1,0 +1,21 @@
+/* ============================================
+   APP COMPONENT STYLES
+   ============================================ */
+
+.app {
+  /* Main app container */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  /* Main content area */
+  flex: 1;
+  width: 100%;
+}
+
+/* Ensure smooth scrolling is enabled */
+html {
+  scroll-behavior: smooth;
+}

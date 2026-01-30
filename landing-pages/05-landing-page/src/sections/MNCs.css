@@ -1,0 +1,209 @@
+/* ============================================
+   MNCs SECTION STYLES
+   ============================================ */
+
+.mncs {
+    background: var(--bg-dark);
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.mncs__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.mncs__title {
+    font-size: var(--fs-5xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.mncs__subtitle {
+    font-size: var(--fs-xl);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   INFINITE MARQUEE - Logo Scroll Animation
+   ============================================ */
+.mncs__marquee-container {
+    /* Container with overflow hidden */
+    overflow: hidden;
+    margin-bottom: var(--spacing-3xl);
+    position: relative;
+
+    /* Gradient fade on edges */
+    mask-image: linear-gradient(to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent);
+}
+
+.mncs__marquee {
+    /* Flexbox for horizontal layout */
+    display: flex;
+    gap: var(--spacing-xl);
+
+    /* Infinite scroll animation */
+    animation: marquee 30s linear infinite;
+    width: max-content;
+}
+
+/* Pause animation on hover */
+.mncs__marquee-container:hover .mncs__marquee {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.mncs__logo-card {
+    /* Logo card styling with glassmorphism */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+
+    /* Sizing and padding */
+    min-width: 200px;
+    height: 100px;
+    padding: var(--spacing-lg);
+
+    /* Flexbox centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Transition */
+    transition: all var(--transition-base);
+}
+
+.mncs__logo-card:hover {
+    /* Hover effect */
+    background: var(--glass-bg-hover);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-glow-primary);
+}
+
+.mncs__logo-text {
+    /* Logo text styling */
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   COLLABORATIONS GRID
+   ============================================ */
+.mncs__collaborations {
+    text-align: center;
+}
+
+.mncs__collab-title {
+    font-size: var(--fs-4xl);
+    margin-bottom: var(--spacing-2xl);
+
+    /* Gradient text */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mncs__collab-grid {
+    /* Grid layout - 3 columns */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.mncs__collab-card {
+    /* Card styling */
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: all var(--transition-base);
+}
+
+.mncs__collab-name {
+    /* Company name */
+    font-family: var(--font-heading);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.mncs__collab-badge {
+    /* Partnership badge */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--bg-dark);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .mncs__collab-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .mncs__header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .mncs__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .mncs__subtitle {
+        font-size: var(--fs-lg);
+    }
+
+    .mncs__logo-card {
+        min-width: 150px;
+        height: 80px;
+    }
+
+    .mncs__logo-text {
+        font-size: var(--fs-lg);
+    }
+
+    .mncs__collab-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .mncs__collab-title {
+        font-size: var(--fs-3xl);
+    }
+}

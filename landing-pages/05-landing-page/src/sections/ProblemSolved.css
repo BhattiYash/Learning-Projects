@@ -1,0 +1,191 @@
+/* ============================================
+   PROBLEM SOLVED SECTION STYLES - WITH GIFS
+   ============================================ */
+
+.problem-solved {
+    /* Background with subtle gradient */
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.problem-solved__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.problem-solved__title {
+    font-size: var(--fs-5xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.problem-solved__subtitle {
+    font-size: var(--fs-xl);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   PROBLEMS GRID
+   ============================================ */
+.problem-solved__grid {
+    /* Grid layout - 2 columns on desktop */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+}
+
+/* ============================================
+   PROBLEM CARD - With GIF Background
+   ============================================ */
+.problem-solved__card {
+    /* Card padding and layout */
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+
+    /* Transition for hover effects */
+    transition: all var(--transition-base);
+}
+
+/* GIF Background Layer */
+.problem-solved__gif-bg {
+    /* Absolute positioning to cover card */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.problem-solved__gif {
+    /* GIF styling */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    filter: blur(2px);
+    transition: all var(--transition-base);
+}
+
+.problem-solved__card:hover .problem-solved__gif {
+    /* Hover effect - brighten GIF */
+    opacity: 0.25;
+    filter: blur(0px);
+    transform: scale(1.05);
+}
+
+/* Content Overlay */
+.problem-solved__content {
+    /* Position above GIF */
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-xl);
+
+    /* Glassmorphism overlay */
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(var(--blur-md));
+    -webkit-backdrop-filter: blur(var(--blur-md));
+
+    /* Full height */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.problem-solved__icon-wrapper {
+    /* Icon container with colored background */
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+
+    /* Flexbox centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Glassmorphism with colored glow */
+    background: var(--glass-bg);
+    border: 2px solid var(--icon-color);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 0 20px var(--icon-color);
+
+    /* Transition */
+    transition: all var(--transition-base);
+}
+
+.problem-solved__card:hover .problem-solved__icon-wrapper {
+    /* Hover effect - stronger glow */
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px var(--icon-color);
+}
+
+.problem-solved__icon {
+    /* Icon styling */
+    font-size: var(--fs-4xl);
+    color: var(--icon-color);
+}
+
+.problem-solved__card-title {
+    /* Card title */
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.problem-solved__card-description {
+    /* Card description */
+    font-size: var(--fs-base);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .problem-solved__grid {
+        gap: var(--spacing-lg);
+    }
+
+    .problem-solved__card,
+    .problem-solved__content {
+        min-height: 350px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .problem-solved__grid {
+        /* Single column on mobile */
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .problem-solved__header {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .problem-solved__title {
+        font-size: var(--fs-4xl);
+    }
+
+    .problem-solved__subtitle {
+        font-size: var(--fs-lg);
+    }
+
+    .problem-solved__card,
+    .problem-solved__content {
+        min-height: 300px;
+    }
+}

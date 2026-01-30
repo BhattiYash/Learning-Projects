@@ -1,0 +1,493 @@
+/* ============================================
+   GLOBAL STYLES - HIGH TECH WEBSITE
+   ============================================ */
+
+/* Import Modern Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================ */
+:root {
+  /* === COLOR PALETTE === */
+  /* Primary colors - Neon Cyan for high-tech feel */
+  --primary-color: #00f0ff;
+  --primary-dark: #00b8cc;
+  --primary-light: #5ff4ff;
+  
+  /* Secondary colors - Electric Purple */
+  --secondary-color: #a855f7;
+  --secondary-dark: #7c3aed;
+  --secondary-light: #c084fc;
+  
+  /* Accent colors */
+  --accent-neon-pink: #ff006e;
+  --accent-neon-green: #39ff14;
+  
+  /* Background colors - Deep dark theme */
+  --bg-dark: #0a0a0f;
+  --bg-dark-secondary: #12121a;
+  --bg-dark-tertiary: #1a1a2e;
+  
+  /* Glass effect backgrounds */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b4b4b4;
+  --text-muted: #6b6b6b;
+  
+  /* === TYPOGRAPHY === */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Orbitron', 'Inter', sans-serif;
+  
+  /* Font sizes - Responsive scaling */
+  --fs-xs: 0.75rem;      /* 12px */
+  --fs-sm: 0.875rem;     /* 14px */
+  --fs-base: 1rem;       /* 16px */
+  --fs-lg: 1.125rem;     /* 18px */
+  --fs-xl: 1.25rem;      /* 20px */
+  --fs-2xl: 1.5rem;      /* 24px */
+  --fs-3xl: 1.875rem;    /* 30px */
+  --fs-4xl: 2.25rem;     /* 36px */
+  --fs-5xl: 3rem;        /* 48px */
+  --fs-6xl: 3.75rem;     /* 60px */
+  --fs-7xl: 4.5rem;      /* 72px */
+  
+  /* === SPACING === */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 1.5rem;   /* 24px */
+  --spacing-lg: 2rem;     /* 32px */
+  --spacing-xl: 3rem;     /* 48px */
+  --spacing-2xl: 4rem;    /* 64px */
+  --spacing-3xl: 6rem;    /* 96px */
+  
+  /* === EFFECTS === */
+  /* Blur values for glassmorphism */
+  --blur-sm: 8px;
+  --blur-md: 16px;
+  --blur-lg: 24px;
+  
+  /* Box shadows - Neon glow effects */
+  --shadow-glow-primary: 0 0 20px rgba(0, 240, 255, 0.3);
+  --shadow-glow-secondary: 0 0 20px rgba(168, 85, 247, 0.3);
+  --shadow-glow-intense: 0 0 40px rgba(0, 240, 255, 0.5);
+  
+  /* Standard shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* === BORDER RADIUS === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  
+  /* === Z-INDEX LAYERS === */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
+}
+
+body {
+  /* Background - Deep dark with subtle gradient */
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
+  background-attachment: fixed;
+  
+  /* Typography */
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--text-primary);
+  
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  
+  /* Remove default centering from Vite */
+  display: block;
+  min-height: 100vh;
+}
+
+/* ============================================
+   TYPOGRAPHY STYLES
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--fs-6xl);
+  font-weight: 900;
+  /* Gradient text effect for main headings */
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: var(--fs-5xl);
+  font-weight: 800;
+}
+
+h3 {
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   LINK STYLES
+   ============================================ */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+button {
+  font-family: var(--font-primary);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+/* Primary button - Neon glow effect */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--bg-dark);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-glow-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-glow-intense);
+  transform: translateY(-2px);
+}
+
+/* Glass button - Glassmorphism effect */
+.btn-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.btn-glass:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* === GLASS EFFECT === */
+/* Main glass card - Used for sections and containers */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.glass:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Stronger glass effect */
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+}
+
+/* === CONTAINER === */
+/* Main content container - Responsive padding */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* === SECTION SPACING === */
+.section {
+  padding: var(--spacing-3xl) 0;
+  position: relative;
+}
+
+/* === TEXT UTILITIES === */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* === GLOW EFFECTS === */
+.glow-primary {
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.glow-secondary {
+  box-shadow: var(--shadow-glow-secondary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* === TABLET (768px - 1024px) === */
+@media (max-width: 1024px) {
+  :root {
+    /* Reduce font sizes for tablet */
+    --fs-6xl: 3rem;      /* 48px */
+    --fs-5xl: 2.5rem;    /* 40px */
+    --fs-4xl: 2rem;      /* 32px */
+    --fs-3xl: 1.75rem;   /* 28px */
+    
+    /* Adjust spacing */
+    --spacing-3xl: 4rem;
+    --spacing-2xl: 3rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
+/* === MOBILE (< 768px) === */
+@media (max-width: 768px) {
+  :root {
+    /* Further reduce font sizes for mobile */
+    --fs-6xl: 2.5rem;    /* 40px */
+    --fs-5xl: 2rem;      /* 32px */
+    --fs-4xl: 1.75rem;   /* 28px */
+    --fs-3xl: 1.5rem;    /* 24px */
+    --fs-2xl: 1.25rem;   /* 20px */
+    
+    /* Adjust spacing for mobile */
+    --spacing-3xl: 3rem;
+    --spacing-2xl: 2rem;
+    --spacing-xl: 2rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  /* Adjust button padding for mobile */
+  .btn-primary,
+  .btn-glass {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--fs-sm);
+  }
+}
+
+/* === SMALL MOBILE (< 480px) === */
+@media (max-width: 480px) {
+  :root {
+    --fs-6xl: 2rem;      /* 32px */
+    --fs-5xl: 1.75rem;   /* 28px */
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING (Webkit browsers)
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+}
+
+/* ============================================
+   SELECTION STYLING
+   ============================================ */
+::selection {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+}
+
+/* ============================================
+   ANIMATIONS & KEYFRAMES
+   ============================================ */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow pulse animation */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.6);
+  }
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Utility classes for animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
