@@ -27,10 +27,6 @@ npm run preview
 
 The development server will start at `http://localhost:5173` (or your configured port).
 
-## 📚 Documentation
-
-For detailed documentation on customization, styling, and component structure, see **[DOCUMENTATION.md](./DOCUMENTATION.md)**.
-
 ## 🎨 Features
 
 - ✅ Clean, modern UI inspired by Stripe, Linear, Vercel, and Apple
@@ -65,17 +61,6 @@ src/
 2. **Change Colors**: Search for `#2563eb` in CSS files and replace
 3. **Modify Text**: Update JSX content in each component
 4. **Add Sections**: Follow the pattern in existing components
-
-See [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed customization guide.
-
-## 📝 Before Deploying
-
-- [ ] Replace all placeholder text with your content
-- [ ] Update email addresses and social links
-- [ ] Change brand name throughout
-- [ ] Update page title and meta description in `index.html`
-- [ ] Test on mobile devices
-- [ ] Verify all links work
 
 ## 🛠️ Tech Stack
 
