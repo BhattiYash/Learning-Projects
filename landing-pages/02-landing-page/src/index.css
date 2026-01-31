@@ -1,177 +1,73 @@
-:root {
-  /* ====== Cinematic Hypercar Theme Tokens ====== */
-  color-scheme: dark;
+@import './styles/design-system.css';
 
-  /* Palette */
-  --c-ink: #07080b; /* matte black base */
-  --c-ink-2: #0b0d12;
-  --c-surface: rgba(255, 255, 255, 0.06);
-  --c-surface-2: rgba(255, 255, 255, 0.09);
-  --c-border: rgba(255, 255, 255, 0.12);
-  --c-border-strong: rgba(255, 255, 255, 0.18);
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Michroma&family=Rajdhani:wght@300;500;700&display=swap');
 
-  --c-text: rgba(255, 255, 255, 0.92);
-  --c-text-dim: rgba(255, 255, 255, 0.70);
-  --c-text-faint: rgba(255, 255, 255, 0.52);
-
-  --c-lava: #ff4d1a;
-  --c-electric-red: #ff1f4a;
-  --c-neon: #7cffd8;
-  --c-warn: #ffcc66;
-
-  /* Gradients */
-  --g-bg: radial-gradient(1200px 900px at 18% 10%, rgba(255, 77, 26, 0.16), transparent 55%),
-    radial-gradient(900px 700px at 82% 14%, rgba(255, 31, 74, 0.14), transparent 60%),
-    radial-gradient(900px 700px at 56% 88%, rgba(124, 255, 216, 0.10), transparent 62%),
-    linear-gradient(180deg, var(--c-ink), var(--c-ink-2));
-  --g-metal: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
-  --g-lava: linear-gradient(135deg, rgba(255, 77, 26, 0.98), rgba(255, 31, 74, 0.92));
-
-  /* Typography */
-  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
-    "Segoe UI Emoji";
-  --font-display: ui-sans-serif, "Bebas Neue", "Oswald", "Arial Narrow", Impact, system-ui, sans-serif;
-  --tracking-tight: -0.02em;
-  --tracking-wide: 0.08em;
-
-  /* Type scale */
-  --fs-0: clamp(0.95rem, 0.86rem + 0.28vw, 1.05rem);
-  --fs-1: clamp(1.05rem, 0.94rem + 0.5vw, 1.3rem);
-  --fs-2: clamp(1.35rem, 1.12rem + 1.0vw, 1.85rem);
-  --fs-3: clamp(2.0rem, 1.3rem + 2.6vw, 3.2rem);
-  --fs-4: clamp(2.6rem, 1.5rem + 3.8vw, 4.3rem);
-  --fs-5: clamp(3.2rem, 1.6rem + 5.2vw, 5.2rem);
-
-  /* Spacing */
-  --s-1: 0.5rem;
-  --s-2: 0.75rem;
-  --s-3: 1rem;
-  --s-4: 1.5rem;
-  --s-5: 2rem;
-  --s-6: 3rem;
-  --s-7: 4.5rem;
-  --s-8: 6rem;
-
-  /* Layout */
-  --container: 1160px;
-
-  /* Radius */
-  --r-1: 10px;
-  --r-2: 16px;
-  --r-3: 24px;
-  --r-pill: 999px;
-
-  /* Shadows / glows */
-  --sh-soft: 0 24px 70px rgba(0, 0, 0, 0.55);
-  --sh-card: 0 14px 44px rgba(0, 0, 0, 0.52);
-  --glow-lava: 0 0 0.8rem rgba(255, 77, 26, 0.35), 0 0 2.2rem rgba(255, 31, 74, 0.22);
-  --glow-neon: 0 0 0.7rem rgba(124, 255, 216, 0.24), 0 0 2rem rgba(124, 255, 216, 0.12);
-
-  /* Motion */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-1: 180ms;
-  --dur-2: 320ms;
-  --dur-3: 620ms;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ====== Reset / Base ====== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
+  background-color: var(--c-void);
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
   font-family: var(--font-body);
-  font-size: var(--fs-0);
-  line-height: 1.5;
-  color: var(--c-text);
-  background: var(--g-bg);
+  background-color: var(--c-void);
+  background-image:
+    radial-gradient(circle at 50% 0%, #1a1a2e 0%, transparent 60%),
+    radial-gradient(circle at 85% 30%, rgba(42, 232, 255, 0.03) 0%, transparent 40%);
+  color: var(--t-primary);
+  line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle film grain overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: -40px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.055;
-  mix-blend-mode: overlay;
-  background-image: repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.05) 0px,
-      rgba(255, 255, 255, 0.05) 1px,
-      rgba(0, 0, 0, 0.05) 2px,
-      rgba(0, 0, 0, 0.05) 3px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.03) 0px,
-      rgba(255, 255, 255, 0.03) 1px,
-      rgba(0, 0, 0, 0.03) 2px,
-      rgba(0, 0, 0, 0.03) 3px
-    );
-  transform: translate3d(0, 0, 0);
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-gunmetal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-cyan-dim);
 }
 
 #root {
+  width: 100%;
+  min-height: 100vh;
   position: relative;
-  z-index: 1;
+  overflow: hidden;
 }
 
-img,
-svg,
-video,
-canvas {
-  display: block;
+img {
   max-width: 100%;
+  display: block;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-a:hover {
-  color: var(--c-text);
-}
-
-::selection {
-  background: rgba(255, 77, 26, 0.35);
-}
-
-:focus-visible {
-  outline: 2px solid rgba(124, 255, 216, 0.75);
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 1ms !important;
-    scroll-behavior: auto !important;
-  }
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }

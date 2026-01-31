@@ -1,0 +1,158 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero__bg-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1544614471-5541810a5b28?q=80&w=2070&auto=format&fit=crop');
+    /* Darker dramatic car shot */
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(10, 10, 14, 0.3) 0%, var(--c-void) 90%);
+    mix-blend-mode: multiply;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: flex;
+    color: white;
+    mix-blend-mode: overlay;
+    /* Blend slightly with bg for cinematic effect */
+    opacity: 0.9;
+}
+
+.hero__char.text-cyan {
+    color: var(--c-cyan);
+    text-shadow: var(--glow-cyan-strong);
+    mix-blend-mode: normal;
+}
+
+.hero__subtitle {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    letter-spacing: 0.5em;
+    color: var(--t-secondary);
+    text-transform: uppercase;
+}
+
+.hero__specs-mini {
+    display: flex;
+    gap: 4rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    backdrop-filter: blur(4px);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.spec-item__val {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--t-primary);
+}
+
+.spec-item__label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--t-muted);
+}
+
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--t-muted);
+    z-index: 10;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--c-cyan), transparent);
+    animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    51% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 3.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero__specs-mini {
+        gap: 2rem;
+    }
+}
